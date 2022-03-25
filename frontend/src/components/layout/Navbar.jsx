@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Cart from "../cart/Cart";
 import CartIcon from "../icon/CartIcon";
 
 const Navbar = () => {
@@ -51,34 +52,9 @@ const Navbar = () => {
                 )}
               </button>
             </li>
-            {/* <div className="dropdown">
-              <li className="nav-item">
-                <Avatar />
-                <ul className="dropdown-menu" aria-labelledby="user-dropdown">
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Profile
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Your Orders
-                    </button>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Logout
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </div> */}
           </ul>
         </div>
-        {/* <Cart /> */}
+        <Cart />
       </nav>
     </header>
   );
