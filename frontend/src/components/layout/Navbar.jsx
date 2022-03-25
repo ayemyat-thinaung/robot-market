@@ -1,11 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { useCart } from "../../contexts/cart/cart.context";
 import Cart from "../cart/Cart";
 import CartIcon from "../icon/CartIcon";
 
 const Navbar = () => {
+  const { totalItems } = useCart();
   const { pathname } = useLocation();
-  const totalItems = 0;
 
   return (
     <header className="sticky-top bg-white">

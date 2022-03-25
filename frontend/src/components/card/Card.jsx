@@ -10,7 +10,7 @@ const Card = ({ item }) => {
     <div className="card position-relative shadow-sm">
       <div className="d-flex justify-content-center">
         <img
-          src={image || "images/undraw_firmware.png"}
+          src={image}
           alt={name || "Not Available"}
           height={120}
           width={120}
