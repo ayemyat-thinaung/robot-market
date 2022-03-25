@@ -1,9 +1,10 @@
 import React from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import moment from "moment";
+import AddToCartButton from "../button/AddToCartButton";
 
 const Card = ({ item }) => {
-  const { name, material, stock, price, image, createdAt } = item;
+  const { name, material, stock, price, image, createdAt, id } = item;
 
   return (
     <div className="card position-relative shadow-sm">
@@ -31,6 +32,7 @@ const Card = ({ item }) => {
             {stock ? `${stock} Left` : "Out of Stock"}
           </div>
         </div>
+        <AddToCartButton item={{ name, material, stock, price, image, id }} />
       </div>
     </div>
   );
