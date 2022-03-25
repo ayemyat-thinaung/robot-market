@@ -1,6 +1,6 @@
 import React from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
-
+import moment from "moment";
 const Card = ({ item }) => {
   const { name, material, stock, price, image, createdAt } = item;
 
@@ -18,7 +18,8 @@ const Card = ({ item }) => {
         {material}
       </span>
       <span className="badge bg-light position-absolute top-0 end-0 text-secondary">
-        {new Date(createdAt).toLocaleDateString("en-gb")}
+        {/* {new Date(createdAt).toLocaleDateString("en-gb")} */}
+        {moment(createdAt).format("DD-MM-YYYY")}
       </span>
 
       <div className="card-body ">
