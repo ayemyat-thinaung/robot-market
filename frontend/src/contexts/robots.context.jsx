@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { useSessionStorage } from "../hooks/useSessionStorage";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 const RobotsContext = createContext();
 
@@ -21,10 +21,12 @@ const RobotsContextProvider = ({ children }) => {
     }
   }, [robots?.length, setRobots]);
 
+  const data = !robots?.length ? [] : JSON.parse(robots)?.data;
+
   return (
     <RobotsContext.Provider
       value={{
-        robots: !robots?.length ? [] : JSON.parse(robots)?.data,
+        robots: data.map((obj, index) => ({ ...obj, id: index + 1 })),
         setRobots,
         isLoading,
       }}
