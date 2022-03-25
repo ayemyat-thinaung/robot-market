@@ -5,6 +5,7 @@ import { RobotsContextProvider } from "./contexts/robots.context";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import Home from "./pages/home/Home";
+import NotFound from "./pages/404/NotFound";
 
 const App = () => {
   return (
@@ -18,9 +19,8 @@ const App = () => {
               <Route exact path="/">
                 <Home />
               </Route>
-
               <Route path="*">
-                <div>Error</div>
+                <NotFound />
               </Route>
             </Switch>
           </RobotsContextProvider>
