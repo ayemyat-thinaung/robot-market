@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import Home from "./pages/home/Home";
 import NotFound from "./pages/404/NotFound";
+import Products from "./pages/products/Products";
 
 const App = () => {
   return (
@@ -18,6 +19,9 @@ const App = () => {
             <Switch>
               <Route exact path="/">
                 <Home />
+              </Route>
+              <Route exact path="/products">
+                <Products />
               </Route>
               <Route path="*">
                 <NotFound />
