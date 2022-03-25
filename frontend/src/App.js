@@ -1,9 +1,9 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { RobotsContextProvider } from "./contexts/robots.context";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
-import { RobotsContextProvider } from "./contexts/robots.context";
 import Home from "./pages/home/Home";
 
 const App = () => {
