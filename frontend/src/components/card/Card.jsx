@@ -1,6 +1,7 @@
 import React from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import moment from "moment";
+
 const Card = ({ item }) => {
   const { name, material, stock, price, image, createdAt } = item;
 
