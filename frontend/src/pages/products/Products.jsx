@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { groupBy } from "../../utils/groupBy";
 import { RobotsContext } from "../../contexts/robots.context";
+import AllProductsGrid from "./components/AllProductsGrid";
 
 const Products = () => {
   const { search } = useLocation();
@@ -10,7 +11,7 @@ const Products = () => {
 
   const [material, setMaterial] = useState(query.get("material") || "");
 
-  const { robots } = useContext(RobotsContext);
+  const { robots, isLoading } = useContext(RobotsContext);
   const data = groupBy(robots, "material");
   const materialOptions = Object.keys(data);
 
@@ -40,7 +41,22 @@ const Products = () => {
             </label>
           ))}
         </div>
-        <div className="col-9">Products..</div>
+        <div className="col-9">
+          {material && search ? (
+            <AllProductsGrid
+              data={data[material]}
+              isLoading={isLoading}
+              onViewAll={() => history.push("/products")}
+              filter={search ? true : false}
+            />
+          ) : (
+            <AllProductsGrid
+              data={robots}
+              isLoading={isLoading}
+              filter={search ? true : false}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
