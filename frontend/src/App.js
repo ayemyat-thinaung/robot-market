@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
+import Home from "./pages/home/Home";
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path="/">
-              <div>test</div>
+              <Home />
             </Route>
 
             <Route path="*">
