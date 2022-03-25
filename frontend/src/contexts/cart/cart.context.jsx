@@ -1,12 +1,13 @@
-import { createContext, useContext } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from "react";
 import useSessionStorage from "../../hooks/useSessionStorage";
-
-const initialState = {
-  items: [],
-  isEmptyCart: true,
-  totalItems: 0,
-  totalPrice: 0,
-};
+import { cartReducer, initialState } from "./cart.reducer";
 
 const CartContext = createContext();
 
@@ -16,11 +17,48 @@ const CartContextProvider = ({ children }) => {
     JSON.stringify(initialState)
   );
 
-  return (
-    <CartContext.Provider value={{ cart, setCart }}>
-      {children}
-    </CartContext.Provider>
+  const [state, dispatch] = useReducer(cartReducer, JSON.parse(cart));
+
+  useEffect(() => {
+    if (JSON.stringify(state)) {
+      setCart(JSON.stringify(state));
+    }
+  }, [state, setCart]);
+
+  const addItemToCart = (item, quantity) =>
+    dispatch({ type: "ADD_ITEM_QUANTITY", item, quantity });
+
+  const decreaseItemQuantity = (id, quantity) =>
+    dispatch({ type: "DECREASE_ITEM_QUANTITY", id, quantity });
+
+  const clearItemFromCart = (id) =>
+    dispatch({ type: "CLEAR_ITEM_FROM_CART", id });
+
+  const resetCart = () => dispatch({ type: "RESET_CART" });
+
+  const getItemFromCart = useCallback(
+    (id) => state.items.find((item) => item.id === id),
+    [state.items]
   );
+
+  const isInCart = useCallback(
+    (id) => !!state.items.find((item) => item.id === id),
+    [state.items]
+  );
+
+  const value = useMemo(
+    () => ({
+      ...state,
+      addItemToCart,
+      decreaseItemQuantity,
+      clearItemFromCart,
+      getItemFromCart,
+      resetCart,
+      isInCart,
+    }),
+    [state, getItemFromCart, isInCart]
+  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
 const useCart = () => {
