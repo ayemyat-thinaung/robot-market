@@ -4,7 +4,7 @@ import CartIcon from "../icon/CartIcon";
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const { totalItems } = 0;
+  const totalItems = 0;
 
   return (
     <header className="sticky-top bg-white">
