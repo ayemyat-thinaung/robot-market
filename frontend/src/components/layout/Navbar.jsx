@@ -1,13 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-// import { useCart } from "../../contexts/cart/cart.context";
-// import Avatar from "../avatar/Avatar";
-// import Cart from "../cart/Cart";
-// import CartIcon from "../icon/CartIcon";
+import CartIcon from "../icon/CartIcon";
 
 const Navbar = () => {
-  // const { totalItems } = useCart();
   const { pathname } = useLocation();
+  const { totalItems } = 0;
 
   return (
     <header className="sticky-top bg-white">
@@ -36,7 +33,7 @@ const Navbar = () => {
                 Contact Us
               </a>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <button
                 type="button"
                 className="btn btn-light position-relative cursor-pointer"
@@ -53,7 +50,7 @@ const Navbar = () => {
                   ""
                 )}
               </button>
-            </li> */}
+            </li>
             {/* <div className="dropdown">
               <li className="nav-item">
                 <Avatar />
