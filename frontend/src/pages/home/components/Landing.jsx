@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const options = ["One", "two", "three"];
+const options = [
+  "Concrete",
+  "Cotton",
+  "Fresh",
+  "Frozen",
+  "Granite",
+  "Metal",
+  "Plastic",
+  "Rubber",
+  "Soft",
+  "Steel",
+  "Wooden",
+];
 
 const Landing = () => {
   const [value, setValue] = useState("");
