@@ -28,7 +28,6 @@ const cartReducer = (state = initialState, action) => {
         action.id,
         (action.quantity = 1)
       );
-
       return generateFinalState(state, items);
     }
 
