@@ -82,7 +82,7 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="container-fluid p-4 text-center text-secondary bg-asset2">
+    <div className="container-fluid p-4 text-center text-dark bg-asset1">
       Copyright &copy; 2022 Robot Market. All rights reserved.
     </div>
   </footer>
