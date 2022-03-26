@@ -1,0 +1,67 @@
+@import "./variables.scss";
+
+.bg-landing {
+  background: #8360c3 url("../images/mascot_aira.png") no-repeat right;
+  background-size: contain;
+  width: 100%;
+  height: 80vh !important;
+}
+
+.rounded-default {
+  border-radius: $rounded;
+}
+
+.bg-gradient {
+  background: -webkit-linear-gradient(
+    to right,
+    #8360c3,
+    #2ebf91
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8360c3,
+    #2ebf91
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-asset1 {
+  background-color: $asset1 !important;
+}
+.bg-asset2 {
+  background-color: $asset2 !important;
+}
+.bg-asset3 {
+  background-color: $asset3 !important;
+}
+
+.text-asset1 {
+  color: $asset1 !important;
+}
+
+a {
+  text-decoration: none;
+  color: $asset2 !important;
+  transition: all 0.5s;
+  letter-spacing: 1px;
+  &:hover {
+    color: $asset1 !important;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $asset2 !important;
+  transition: all 0.5s;
+  font-weight: 600;
+  &:hover {
+    color: $asset1 !important;
+  }
+}
+
+.active {
+  color: $asset1 !important;
+}
+
+.ls-1 {
+  letter-spacing: 1px !important;
+}
