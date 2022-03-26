@@ -30,10 +30,10 @@ const data = [
 const Services = () => (
   <div className="py-5">
     <div className="container rounded-default bg-asset3 p-5">
-      <div className="row ">
+      <div className="row g-2">
         {data?.map((d) => (
           <div
-            className="col col-sm-12 col-md-12 col-lg-3 d-flex"
+            className="col col-sm-12 col-md-6 col-lg-3 d-flex"
             key={d?.title}
           >
             {d?.icon}
