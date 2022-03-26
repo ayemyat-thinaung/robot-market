@@ -60,7 +60,7 @@ const Cart = () => {
             role="alert"
           >
             <strong>Dear Customer!</strong> You can add up to 5 different robots
-            to cart.
+            to cart for one purchase.
             {/* <button
               type="button"
               aria-label="Close"
