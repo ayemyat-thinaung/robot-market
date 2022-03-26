@@ -18,7 +18,7 @@ const Products = () => {
   return (
     <div className="container px-4 py-5">
       <div className="row gap-4">
-        <div className="col-2">
+        <div className="col-lg-2 col-md-6">
           <h5 className="card-title my-4">Material Type</h5>
 
           {materialOptions?.map((option) => (
@@ -40,8 +40,17 @@ const Products = () => {
               {option}
             </label>
           ))}
+          <div className="card shadow-sm my-3 py-3">
+            <img
+              src="/images/robot.gif"
+              alt="Robot"
+              width="100%"
+              height="auto"
+            />
+            <h6 className="text-center text-asset1">Shop Now!</h6>
+          </div>
         </div>
-        <div className="col-9">
+        <div className="col-lg-9 col-md-6">
           {material && search ? (
             <AllProductsGrid
               data={data[material]}
