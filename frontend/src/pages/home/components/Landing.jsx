@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const options = [
   "Concrete",
@@ -17,6 +17,7 @@ const options = [
 
 const Landing = () => {
   const [value, setValue] = useState("");
+  const history = useHistory();
 
   return (
     <div className="py-5">
@@ -40,8 +41,12 @@ const Landing = () => {
               </option>
             ))}
           </select>
-          <button className="btn btn-light" type="button">
-            <Link to={`/products?material=${value}`}>Search</Link>
+          <button
+            className="btn btn-light"
+            type="button"
+            onClick={() => history.push(`/products?material=${value}`)}
+          >
+            Search
           </button>
         </div>
       </div>
