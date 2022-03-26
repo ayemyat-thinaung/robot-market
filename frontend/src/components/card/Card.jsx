@@ -22,6 +22,7 @@ const Card = ({ item }) => {
       <span className="badge bg-light position-absolute top-0 end-0 text-secondary">
         {/* {new Date(createdAt).toLocaleDateString("en-gb")} */}
         {moment(createdAt).format("DD-MM-YYYY")}
+        -made
       </span>
 
       <div className="card-body ">

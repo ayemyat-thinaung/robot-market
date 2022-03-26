@@ -13,10 +13,12 @@ const CounterButton = ({
     <button
       disabled={decrementDisabled}
       type="button"
-      className={`${decrementDisabled && "disabled"} btn btn-light`}
+      className={`${
+        decrementDisabled && "disabled"
+      } btn btn-light border border-secondary`}
       onClick={onDecrement}
     >
-      <PlusIcon />
+      <MinusIcon />
     </button>
     <span className="px-4">{quantity}</span>
     <button
@@ -25,11 +27,13 @@ const CounterButton = ({
       // title="No more stock!"
       disabled={incrementDisabled}
       type="button"
-      className={`${incrementDisabled && "disabled"} btn btn-light`}
+      className={`${
+        incrementDisabled && "disabled"
+      } btn btn-light border border-secondary`}
       onClick={onIncrement}
       // className="d-flex align-items-center"
     >
-      <MinusIcon />
+      <PlusIcon />
     </button>
   </div>
 );

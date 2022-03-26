@@ -27,7 +27,9 @@ const BestSellerRobots = ({ data }) => {
           ))}
           <div className="d-flex justify-content-center">
             <button type="button" className="btn btn-light">
-              <Link to="/products">View All Products</Link>
+              <Link to="/products" className="nav-link">
+                View All Products
+              </Link>
             </button>
           </div>
         </div>
