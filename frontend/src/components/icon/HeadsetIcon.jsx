@@ -5,7 +5,7 @@ const HeadsetIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     width="60"
     height="60"
-    fill="#a10115"
+    fill="#fff"
     className="bi bi-headset"
     viewBox="0 0 16 16"
   >
