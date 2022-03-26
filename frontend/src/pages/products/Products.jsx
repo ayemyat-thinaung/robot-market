@@ -42,7 +42,7 @@ const Products = () => {
           ))}
           <div className="card shadow-sm my-3 py-3">
             <img
-              src="/images/robot.gif"
+              src="https://i.pinimg.com/originals/e5/5d/1e/e55d1ea6a6a488c810efbdb062465bf9.gif"
               alt="Robot"
               width="100%"
               height="auto"
