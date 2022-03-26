@@ -48,6 +48,7 @@ const Products = () => {
               isLoading={isLoading}
               onViewAll={() => history.push("/products")}
               filter={search ? true : false}
+              material={material}
             />
           ) : (
             <AllProductsGrid

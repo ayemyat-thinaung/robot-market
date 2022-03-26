@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Card from "../../../components/card/Card";
+import DeleteIcon from "../../../components/icon/DeleteIcon";
 
-const AllProductsGrid = ({ data, isLoading, onViewAll, filter }) => {
+const AllProductsGrid = ({ data, isLoading, onViewAll, filter, material }) => {
   const [size, setSize] = useState(20);
 
   const [loadingMore, setLoadingMore] = useState(false);
@@ -17,16 +18,32 @@ const AllProductsGrid = ({ data, isLoading, onViewAll, filter }) => {
       ) : (
         <>
           <div className="d-flex justify-content-between my-4">
-            <h5>{`Products - ${data?.length} found`}</h5>
+            <h5 className="mb-0">
+              Products
+              <span className="text-asset1">{` (${data?.length})`}</span>
+            </h5>
             {filter && (
-              <button
-                type="button"
-                className="btn btn-light"
-                aria-label="Clear All"
-                onClick={onViewAll}
-              >
-                Clear Filter
-              </button>
+              <div className="d-flex align-items-center">
+                Filtered By:&nbsp;
+                <div
+                  role="button"
+                  class="px-2 rounded-pill border border-secondary text-secondary"
+                  onClick={onViewAll}
+                  aria-label="Clear Filter"
+                >
+                  {material}
+                  <DeleteIcon />
+                </div>
+                {/* <button
+                  type="button"
+                  className="btn btn-sm rounded-pill border border-secondary text-secondary mx-2"
+                  aria-label="Clear All"
+                  onClick={onViewAll}
+                >
+                  {material}
+                  <DeleteIcon />
+                </button> */}
+              </div>
             )}
           </div>
           <div className="row g-4">
@@ -41,7 +58,7 @@ const AllProductsGrid = ({ data, isLoading, onViewAll, filter }) => {
 
             <div className="d-flex justify-content-center my-5">
               {size >= data?.length ? (
-                "End result..."
+                "There is no more data..."
               ) : (
                 <button
                   type="button"
