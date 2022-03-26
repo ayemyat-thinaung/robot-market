@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import SearchIcon from "../../../components/icon/SearchIcon";
 
 const options = [
   "Concrete",
@@ -21,7 +22,7 @@ const Landing = () => {
 
   return (
     <div className="py-5">
-      <div className="container rounded-default bg-asset1 d-flex flex-column justify-content-center align-items-center p-5">
+      <div className="container rounded-default bg-landing d-flex flex-column justify-content-center align-items-center p-5">
         <h1 className="text-center mt-5 display-6 fw-normal text-white">
           Changing your idea of what robots can do
         </h1>
@@ -42,11 +43,12 @@ const Landing = () => {
             ))}
           </select>
           <button
-            className="btn btn-light"
+            className="btn btn-light d-flex align-items-center"
             type="button"
             onClick={() => history.push(`/products?material=${value}`)}
           >
-            Search
+            Search&nbsp;
+            <SearchIcon />
           </button>
         </div>
       </div>

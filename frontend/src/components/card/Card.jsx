@@ -16,7 +16,7 @@ const Card = ({ item }) => {
           width={120}
         />
       </div>
-      <span className="badge bg-dark position-absolute top-0 start-0 text-white">
+      <span className="badge bg-success position-absolute top-0 start-0 text-white">
         {material}
       </span>
       <span className="badge bg-light position-absolute top-0 end-0 text-secondary">

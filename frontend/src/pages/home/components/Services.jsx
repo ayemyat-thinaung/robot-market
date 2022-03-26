@@ -29,17 +29,17 @@ const data = [
 
 const Services = () => (
   <div className="py-5">
-    <div className="container rounded-default bg-asset3 p-5">
+    <div className="container rounded-default bg-gradient p-5">
       <div className="row g-2">
         {data?.map((d) => (
           <div
-            className="col col-sm-12 col-md-6 col-lg-3 d-flex"
+            className="col col-sm-12 col-md-6 col-lg-3 d-flex "
             key={d?.title}
           >
             {d?.icon}
             <div className="px-2">
-              <h5 className="fw-bold mb-0">{d?.title}</h5>
-              <p className="text-secondary mb-0">{d?.description}</p>
+              <h5 className="fw-bold text-white mb-0">{d?.title}</h5>
+              <p className="text-asset2 mb-0">{d?.description}</p>
             </div>
           </div>
         ))}
